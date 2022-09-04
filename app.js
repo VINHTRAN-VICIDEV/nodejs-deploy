@@ -7,7 +7,7 @@ const requestListener = function (req, res) {
     res.send('http server');
   }
   const server = http.createServer(requestListener);
-  server.listen(400);
+  server.listen(80);
 
 app.get("/", (req, res)=>{
     res.send("hello word")
@@ -15,5 +15,7 @@ app.get("/", (req, res)=>{
 app.get("/new", (req, res)=>{
     res.send("hello new")
 })
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000,()=>{
+    console.log("running in :", process.env.POR)
+});
 module.exports = app
